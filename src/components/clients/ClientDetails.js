@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 //import PropTypes from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
@@ -13,13 +13,25 @@ class ClientDetails extends Component {
     if(client) {
       return (
         <div>
-          <h1>{client.firstName}</h1>
-          
+          <div className="row">
+            <div className="col-md-6">
+              <Link to="/" className="btn btn-link">
+                <i className="fas fa-arrow-circle-left"></i> Back To Dashboard
+              </Link>
+            </div>
+            <div className="col md-6">
+              <div className="btn-group float-right">
+                <Link to={`/client/edit/${client.id}`} className="btn btn-dark">
+                  Edit
+                </Link>
+                <button className="btn btn-danger">Delete</button>
+              </div>
+            </div>
+          </div>          
         </div>
       );
     } else {
       return <Spinner />;
-      //{console.log('bye')}
     }
   }
 }
