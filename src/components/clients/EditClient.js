@@ -8,12 +8,29 @@ import Spinner from '../layout/Spinner';
 
 class EditClient extends Component {
   render() {
-    return (
-      <div>
-        <h1>edit</h1>
-      </div>
-    )
+    const { client } = this.props;
+
+    if(client) {
+      return (
+        <div>
+          <h1>{client.firstName}</h1>
+        </div>
+      )
+    } else {
+      return <Spinner />
+    }
   }
 }
 
-export default EditClient;
+EditClient.propTypes = {
+  firestore: PropTypes.object.isRequired
+}
+
+export default compose(
+  firestoreConnect(props => [
+    { collection: 'clients', storeAs: 'client', doc: props.match.params.id }
+  ]),
+  connect(({ firestore: { ordered } }, props) => ({
+    client: ordered.client && ordered.client[0]
+  }))
+)(EditClient);
