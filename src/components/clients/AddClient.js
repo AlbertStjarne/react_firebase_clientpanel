@@ -40,6 +40,56 @@ class AddClient extends Component {
                   />
               </div>
 
+              <div className="form-group">
+                <label htmlFor="lastName">Last Name</label>
+                <input 
+                  type="text" 
+                  className="form-control"
+                  name="LastName"
+                  minLength="2"
+                  required
+                  onChange={this.onChange}
+                  value={this.state.lastName}
+                  />
+              </div>
+              
+              <div className="form-group">
+                <label htmlFor="email">Email</label>
+                <input 
+                  type="email" 
+                  className="form-control"
+                  name="email"
+                  onChange={this.onChange}
+                  value={this.state.email}
+                  />
+              </div>
+             
+              <div className="form-group">
+                <label htmlFor="phone">Phone</label>
+                <input 
+                  type="text" 
+                  className="form-control"
+                  name="phone"
+                  minLength="10"
+                  required
+                  onChange={this.onChange}
+                  value={this.state.phone}
+                  />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="balance">Balance</label>
+                <input 
+                  type="text" 
+                  className="form-control"
+                  name="balance"                  
+                  onChange={this.onChange}
+                  value={this.state.balance}
+                  />
+              </div>
+
+              <input type="submit" value="Submit" className="btn btn-primary btn-block"/>
+
             </form>
           </div>
         </div>
