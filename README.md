@@ -1,3 +1,74 @@
+# An application to handle clients, built with React, Redux and Firebase/Firestore as backend
+
+A panel application to handle clients, built with React, Redux and Firebase/Firestore as backend.
+The application has the following functionality:
+* Client dashboard with Client name, email, balance and link to details.
+* Client details page with client name, ID, balance, email and phone. Link to edit page and possiblity to delete the client.
+* Add new client page
+* Settings page with possibility to change:
+  - Allow registration of new client
+  - Disable entering balance when adding a new client
+  - Disable editing balance on the client details page
+* Register page for new users of the application
+* Login page
+
+Redux has been used for state management. [Redux](https://redux.js.org/)
+
+It is a full CRUD application.
+
+Firestore has been used as database. Cloud Firestore is a flexible, scalable database for mobile, web, and server development from Firebase and Google Cloud Platform. [Firebase](https://firebase.google.com/)
+
+An .env file has been used for Firebase credentials. Its content is as follows:
+```
+REACT_APP_API_KEY=
+REACT_APP_AUTH_DOMAIN=
+REACT_APP_DATABASE_URL=
+REACT_APP_PROJECT_ID=
+REACT_APP_STORAGE_BUCKET=
+REACT_APP_MESSAGING_SENDER_ID=
+```
+
+Bootstrap has been used for styling.
+
+The application has been deployed to firebase. [reactclientpanel](https://reactclientpanel-10a26.firebaseapp.com/)
+
+## Screenshots
+
+Dashboard
+
+<img src="dashboard.png" width=650>
+
+
+Add client
+
+<img src="add_client.png" width=650>
+
+
+Client details
+
+<img src="client_details.png" width=650>
+
+
+Settings
+
+<img src="settings.png" width=650>
+
+
+Register new user
+
+<img src="register.png" width=650>
+
+
+
+## Author
+* Albert Stjärne (https://github.com/AlbertStjarne)
+
+
+
+
+
+# React & Redux README included from start
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
