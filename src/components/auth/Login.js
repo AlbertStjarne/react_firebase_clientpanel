@@ -8,7 +8,21 @@ class Login extends Component {
   state = {
     email: '',
     password: ''
+  };
+
+  onSubmit = e => {
+    e.preventDefault();
+
+    const { firebase } = this.props;
+    const { email, password } = this.state;
+
+    firebase.login({
+      email,
+      password
+    }).catch(err => alert('Invalid login credentials'));
   }
+
+  onChange = e => this.setState({[e.target.name]: e.target.value});
 
   render() {
     return (
@@ -22,7 +36,7 @@ class Login extends Component {
                     Login
                 </span>
               </h1>
-              <form>
+              <form onSubmit={this.onSubmit}>
                 <div className="form-group">
                   <label htmlFor="email">Email</label>
                   <input 
@@ -38,7 +52,7 @@ class Login extends Component {
                 <div className="form-group">
                   <label htmlFor="password">Password</label>
                   <input 
-                    type="passwork" 
+                    type="password" 
                     className="form-control" 
                     name="password" 
                     required 
